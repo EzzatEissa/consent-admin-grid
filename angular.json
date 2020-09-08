@@ -13,7 +13,7 @@
           "options": {
             "showCircularDependencies": false,
             "aot": false,
-            "outputPath": "dist/consent-admin",
+            "outputPath": "dist/consent-admin-grid",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
