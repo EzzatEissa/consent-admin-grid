@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col">
+    <div class="box-part text-center bg-light rounded cursor-pointer p-3" [routerLink]="[link]">
+      <i class="{{icon}}" aria-hidden="true"></i>
+
+      <div class="title">
+        <h4>{{title}}</h4>
+      </div>
+
+      <div class="text">
+        <span>{{description}}</span>
+      </div>
+
+      <a  [routerLink]="[link]">View {{title}}</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+input:focus, textarea:focus{
+  border-top: 1px solid #DEE4E8 !important;
+  border-right: 1px solid #DEE4E8 !important;
+  border-left: 1px solid #DEE4E8 !important;
+  border-bottom: 3px solid #2387D4 !important;
+  transition: all 0.2s linear !important;
+}
+
+select:focus{
+  border: 1px solid #DEE4E8 !important;
+}
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before{
+  border-color: #DEE4E8 !important;
+}
+
+.card-header {
+  border-bottom: 2px solid #8e9092;
+  background-color: #e3e8ea;
+  line-height: 2.5;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+
+.sbm-serial{
+  width: 4rem;
+}
+
+.text-green {
+  color: #40b113;
+}
+
+.text-red {
+  color: #f51e62;
+}
+
+.text-blue {
+  color: #236ebd;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

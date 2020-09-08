@@ -1,0 +1,189 @@
+<div class="card m-3">
+  <h5 class="card-header">Users</h5>
+  <div class="card-body">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+
+      <div class="row">
+        <div class="col">
+          <label>User Id</label>
+          <input type="text" name="userName" class="form-control" [(ngModel)]="model.userName" #userId="ngModel" >
+        </div>
+
+        <div class="col">
+          <label>First Name</label>
+          <input type="text" name="firstName" class="form-control" [(ngModel)]="model.firstName" #firstName="ngModel" >
+        </div>
+
+        <div class="col">
+          <label>Last Name</label>
+          <input type="text" name="lastName" class="form-control" [(ngModel)]="model.lastName" #lastName="ngModel" >
+        </div>
+
+      </div>
+
+      <div class="row mb-5">
+
+        <div class="col">
+          <label>Account Number</label>
+          <input type="text" name="accountNumber" class="form-control" [(ngModel)]="model.accountNumber" #accountNumber="ngModel" >
+        </div>
+        <div class="col">
+          <label>Segment</label>
+          <select class="form-control" [(ngModel)]="model.segment" name="segment" #segment="ngModel">
+            <option value="" selected>select a Segment</option>
+            <option *ngFor="let item of segments" [value]="item.code">{{item.name}}</option>
+          </select>
+        </div>
+
+        <div class="col" style="margin-top: 2.3rem;">
+          <!--<button class="btn btn-warning mr-1">Search</button>-->
+          <button class="btn btn-primary btn-labeled mr-2 mb-3"><b><i aria-hidden="true" class="fa fa-search"></i></b> Search </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+
+          <p-table [value]="users" [responsive]="true" [rowHover]="true" class="sbm-dt" [paginator]="users?.length > 5" [rows]="5">
+            <ng-template pTemplate="header">
+              <tr>
+                <th class = "text-center"style="width: 12rem;">{{'User Id' | translate}}</th>
+                <th class = "text-center">{{'First Name' | translate}}</th>
+                <th class = "text-center">{{'Last Name' | translate}}</th>
+                <th class = "text-center">{{'Segment' | translate}}</th>
+                <th class = "text-center">{{'Actions' | translate}}</th>
+              </tr>
+            </ng-template>
+            <ng-template let-i="rowIndex" pTemplate="body" let-dtUser>
+              <tr class="ui-selectable-row">
+                <td class = "text-center">{{dtUser.userName}}</td>
+                <td class = "text-center" >{{dtUser.firstName}}</td>
+                <td class = "text-center">{{dtUser.lastName}}</td>
+                <td class = "text-center">{{dtUser.segment?.name}}</td>
+                <td class = "text-center">
+                  <div class="row">
+                    <div class="col"></div>
+                    <div class="col-auto">
+                      <a href="javascript:void(0);" [routerLink]="['/consent/user-consent']" [queryParams]="{userId: dtUser.id, userName: dtUser.userName}" pTooltip="Consent">
+                        <i class="fa fa-shield fa-2x text-green"></i>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <a href="javascript:void(0);" [routerLink]="['/consent/app']" [queryParams]="{userId: dtUser.id}" pTooltip="Apps">
+                        <i class="fa fa-tablet fa-2x text-red"></i>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <a href="javascript:void(0);" (click)="viewAccounts(dtUser.id)" pTooltip="Accounts">
+                        <i class="fa fa-id-card fa-2x text-blue"></i>
+                      </a>
+                    </div>
+                    <div class="col"></div>
+                  </div>
+                </td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+              <tr>
+                <td colspan="5" class="text-center">
+                  no data
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<p-dialog header="Consent Details" [(visible)]="consentDisplay" position = "center" [modal] = "true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+
+  <div class="row">
+    <div class="col">
+      <app-text-viewer label="Consent Status" [value]="selectedConsent.status"></app-text-viewer>
+    </div>
+
+    <div class="col">
+      <app-text-viewer label="Account Number" [value]="selectedConsent.account?.accountNumber"></app-text-viewer>
+    </div>
+
+    <div class="col">
+      <app-text-viewer label="User" [value]="selectedConsent.account?.user?.name"></app-text-viewer>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-text-viewer label="Expiration Date" [value]="selectedConsent.expirationDateTime | date:'medium'"></app-text-viewer>
+    </div>
+
+    <div class="col">
+      <app-text-viewer label="Transaction From Date" [value]="selectedConsent.transactionFromDateTime| date:'medium'"></app-text-viewer>
+    </div>
+
+    <div class="col">
+      <app-text-viewer label="Transaction To Date" [value]="selectedConsent.transactionToDateTime | date:'medium'"></app-text-viewer>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-values-list-view label="Permissions" [values]="selectedConsent.permissions"></app-values-list-view>
+    </div>
+  </div>
+
+</p-dialog>
+
+
+<p-dialog header="Application Details" [(visible)]="tpDisplay" position = "center" [modal] = "true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+
+  <div class="row">
+    <div class="col">
+      <app-text-viewer label="Client Id" [value]="selectedConsent.app?.clientId"></app-text-viewer>
+    </div>
+
+    <div class="col">
+      <app-text-viewer label="Authorized Grant Types" [value]="selectedConsent.app?.authorizedGrantTypes"></app-text-viewer>
+    </div>
+
+    <div class="col">
+      <app-text-viewer label="Registered Redirect Uri" [value]="selectedConsent.app?.registeredRedirectUri"></app-text-viewer>
+    </div>
+  </div>
+
+</p-dialog>
+
+
+<p-dialog header="User Accounts" [(visible)]="accountDisplay" position = "center" [modal] = "true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+  <p-table [value]="accounts" [responsive]="true" [rowHover]="true" class="sbm-dt" [paginator]="users?.length > 5" [rows]="5">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class = "text-center">{{'Account Number' | translate}}</th>
+        <th class = "text-center">{{'Account Type' | translate}}</th>
+        <th class = "text-center" style="width: 12rem;">{{'Status' | translate}}</th>
+      </tr>
+    </ng-template>
+    <ng-template let-i="rowIndex" pTemplate="body" let-dtAccount>
+      <tr class="ui-selectable-row">
+        <td class = "text-center">{{dtAccount.accountNumber}}</td>
+        <td class = "text-center">{{dtAccount.accountType?.name}}</td>
+        <td class = "text-center" >
+          <span class = "badge badge-bill" [ngClass] = "{'badge-primary' : dtAccount.status === 'ACTIVE','badge-danger' : dtAccount.status !== 'ACTIVE'}">
+          {{dtAccount.status}}
+          </span>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="3" class="text-center">
+          no data
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</p-dialog>
