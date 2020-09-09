@@ -9,5 +9,6 @@ export interface App {
   authorizedGrantTypes: string;
   registeredRedirectUri: string;
   permissions: Permission[];
-  appName: string;
+  appName: string
+  fintech: string;
 }

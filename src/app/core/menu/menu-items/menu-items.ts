@@ -21,23 +21,23 @@ const MENUITEMS = [
     state: 'consent/home',
     name: 'Home',
     type: 'link',
-    icon: 'icon-speedometer icons',
+    icon: 'fa fa-home',
   },
   {
     state: 'consent/user',
-    name: 'User',
+    name: 'Users',
     type: 'link',
     icon: 'fa fa-user',
   },
   {
     state: 'consent/app',
-    name: 'Application',
+    name: 'Applications',
     type: 'link',
     icon: 'fa fa-tablet',
   },
   {
     state: 'consent/permission',
-    name: 'Permission',
+    name: 'Permissions',
     type: 'link',
     icon: 'fa fa-shield',
   }

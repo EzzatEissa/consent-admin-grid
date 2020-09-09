@@ -54,16 +54,17 @@
 
 <div class="row mb-5">
   <div class="col" *ngFor="let app of apps">
-    <div class="card border text-center">
-      <div class="card-body"><p class="font-4x">{{app.appName}}</p>
+    <div class="card border text-center py-5">
+      <div class="card-body"><p class="font-3x pb-5">{{app.appName}}</p>
         <hr class="border-primary">
         <div class="card-feature mb-4">
           <ul class="list-unstyled text-left">
             <li><span class="mr-2"><i class="fa fa-id-card text-green" pTooltip="App Id"></i></span>{{app.clientId}}</li>
             <li><span class="mr-2"><i class="fa fa-link text-green" pTooltip="Redirect Url"></i></span> {{app.registeredRedirectUri}}</li>
+            <li><span class="mr-2"><i class="fa fa-bank text-green" pTooltip="Redirect Url"></i></span> {{app.fintech}}</li>
           </ul>
         </div>
-        <a class="btn btn-secondary btn-lg" href="javascript:void(0)" (click)="viewAppPermissions(app)"><i class="la la-cart-plus mr-2 la-lg"></i>Permission</a>
+        <a class="btn btn-secondary btn-lg mt-5 text-white" href="javascript:void(0)" (click)="viewAppPermissions(app)"><i class="la la-cart-plus mr-2 la-lg"></i>Permission</a>
       </div>
     </div>
   </div>

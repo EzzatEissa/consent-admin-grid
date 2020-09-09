@@ -14,17 +14,17 @@
 }
 
 .sidebar-logo{
-  background: #00508e;
+  background: #2E2940;
   box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
-  padding: 0 25px;
+  //padding: 0 25px;
   height: 99px !important;
 }
 
 
 .logo-menu{
-  height: 79px;
-  width: auto;
-  margin-left: 30px;
+  height: 50px;
+  //width: auto;
+  //margin-left: 30px;
 }
 
 .sidenav-scrollbar-container{
@@ -66,3 +66,37 @@
   }
 }
 */
+
+footer {
+  padding-top: 55px;
+  padding-left: 55px;
+  background: #1c2735;
+  position: relative;
+  z-index: 6;
+}
+
+.no-bullet {
+  margin-left: 0px;
+  list-style: none;
+  padding-left: 0px;
+}
+
+footer .soc_block {
+  border-top: 1px solid #333d4a;
+  padding-top: 30px;
+  padding-bottom: 17px;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #7c8389;
+}
+
+footer .soc_block .foot_menu {
+  padding: 0;
+  margin: 0;
+}
+
+footer .foot_menu li {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}

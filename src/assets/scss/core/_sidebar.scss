@@ -43,7 +43,8 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	background: $sidebar-bg;
+	//background: $sidebar-bg;
+  background-color: #2E2940;
 	position: relative;
 	z-index: 99;
 	transition-duration: 0.2s, 0.2s, 0.35s;
@@ -69,7 +70,7 @@
 	height: $header-height;
 }
 .sidebar-logo {
-	padding: 1rem 1rem;
+	//padding: 1rem 1rem;
 	@include background-opacity($sidebar-logo-bg, 0.7);
 }
 /*=========== User Section =============*/

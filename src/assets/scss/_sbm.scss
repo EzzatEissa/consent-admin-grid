@@ -42,3 +42,34 @@ select:focus{
 .cursor-pointer {
   cursor: pointer;
 }
+
+.fa-6x{
+  font-size: 6rem !important;
+}
+
+.fa-7x{
+  font-size: 7rem !important;
+}
+
+.fa-8x{
+  font-size: 8rem !important;
+}
+
+.fa-9x{
+  font-size: 9rem !important;
+}
+.fa-10x{
+  font-size: 10rem !important;
+}
+
+body,html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.inner-container {
+  min-height: calc(100vh - 20px);
+}
+
+.vh-80{
+  height: 80vh !important;
+}

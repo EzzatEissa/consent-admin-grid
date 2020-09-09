@@ -13,8 +13,8 @@ import {AuthService} from "../../core/service/auth/auth.service";
 
 export class LoginoneComponent {
 
-   email    : string ="demo@example.com";
-   password : string = "0123456789";
+   email    : string ="admin";
+   password : string = "admin";
    name     :string;
 
    constructor( private router: Router,
@@ -23,7 +23,7 @@ export class LoginoneComponent {
 
    // when email and password is correct, user logged in.
    logIn(value){
-      this.authService.loginUser(value);
+      this.authService.loginUser({email: 'demo@example.com', password: '0123456789'});
    }
 
 }

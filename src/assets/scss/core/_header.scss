@@ -538,7 +538,7 @@
 		padding-top: 3rem;
 	}
 	.sidebar-logo {
-		background: $primary;
+		background: #2E2940;
 	}
 }
 .horizontal-main-menu {
@@ -589,7 +589,7 @@
 
 .header-primary{
    .main-header,.horizontal-header,&.horizontal-wrapper .sidebar-logo{
-      background-color:$primary;
+      background-color:$sbm-dark-blue;
       color:$white;
    }
 }
@@ -620,4 +620,8 @@
    .search-i:before{
       top:10px;
    }
+}
+
+.logo-sign{
+  margin: auto;
 }

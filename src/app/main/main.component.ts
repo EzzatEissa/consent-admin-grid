@@ -44,7 +44,7 @@ export class MainComponent implements OnInit, OnDestroy {
 	_mode               : string = "push";
 	sidenavMode         : string = 'side';
 	themeSkinColor      : any = "gray";
-	headerSkinColor     : any = "header-success";
+	headerSkinColor     : any = "header-primary";
 	root                : any = 'ltr';
 	layout              : any = 'ltr';
 	header              : string;

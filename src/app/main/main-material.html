@@ -204,7 +204,12 @@
 						<span class="navbar-brand">{{header}}</span>
 					</div>
 					<div class="inner-container">
-						<router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+            <div class="row">
+              <div class="col">
+                <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+              </div>
+            </div>
+
 						<!--<tour-step-template>-->
 							<!--<ng-template let-step="step">-->
 								<!--<div (click)="$event.stopPropagation()">-->
@@ -219,19 +224,68 @@
 								<!--</div>-->
 							<!--</ng-template>-->
 						<!--</tour-step-template>-->
+            <!--<footer>-->
+              <!--<div class="row">-->
+                <!--<div class="col p-3">-->
+                  <!--&copy; Copy rights reserved to Saudi Business Machine <a href="http://www.sbm.com.sa">SBM</a>-->
+                <!--</div>-->
+              <!--</div>-->
+
+            <!--</footer>-->
 					</div>
+          <footer class="">
+            <div class="row">
+              <div class="col-sm-12 col-lg-2 col-md-2">
+                <a href="/" title="">
+                  <img class="logo-menu" src="assets/img/sbm/logo.png" alt="">
+                </a>
+              </div>
+              <div class="col-sm-6 col-lg-2 col-md-2">
+                <h6>About SBM</h6>
+                <ul class="no-bullet">
+                  <li><a href="https://www.sbm.com.sa/career-opportunities">Careers</a></li>
+                  <li><a href="https://www.sbm.com.sa/latest-news">Latest News</a></li>
+                  <li><a href="https://www.sbm.com.sa/content/corporate-vision-mission">Corporate Vision</a></li>
+                  <li><a href="https://www.sbm.com.sa/content/overview">About SBM</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-lg-2 col-md-2">
+                <h6>Discover</h6>
+                <ul class="no-bullet">
+                  <li><a href="https://www.sbm.com.sa/content/ibm-hardware-0">Our Products</a></li>
+                  <li><a href="https://www.sbm.com.sa/content/integration">Our Services</a></li>
+                  <li><a href="https://www.sbm.com.sa/content/quality-management-system">Our Partners</a></li>
+                  <li><a href="https://www.sbm.com.sa/case-studies">Case Studies</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-lg-2 col-md-2">
+                <h6>Important links</h6>
+                <ul class="no-bullet">
+                  <li><a href="https://www.sbm.com.sa/content/club-blue">SBM Club Blue</a></li>
+                  <li><a href="https://www.sbm.com.sa/content/press-kit">Press Kit</a></li>
+                  <li><a href="https://www.sbm.com.sa/contact-us">Support</a></li>
+                  <li><a href="https://www.sbm.com.sa/visit">Visitor Registration</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-lg-2 col-md-2">
+                <h6 class="">Follow Us</h6>
+                <ul class="foot_menu soc_ico no-bullet">
+                  <li><a href="https://www.facebook.com/sbm.com.sa/"><span class="fa fa-facebook-square"></span></a></li>
+                  <li><a href="https://www.linkedin.com/company/165857?trk=tyah&amp;trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A165857%2Cidx%3A4-1-11%2CtarId%3A1453388062604%2Ctas%3Asaudi%20business"><span class="fa fa-linkedin-square"></span></a></li>
+                  <li><a href="https://twitter.com/SBMsaudi"><span class="fa fa-twitter-square"></span></a></li>
+                  <li><a href="https://www.youtube.com/channel/UCKmC9uP_E-iQDns7gAnV78A"><span class="fa fa-youtube-square"></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row soc_block">
+              <div class="col-sm-12 col-lg-2 col-md-2 text-left">
+                <p>© SBM 2020 </p>
+              </div>
+            </div>
+          </footer>
 				</div>
 
-        <footer class="row" style="    background-color: #edf7ff;
-    width: 101%;
-    position: relative;
-    bottom: 83px;
-    left: 14px;">
-          <div class="col p-3">
-            &copy; Copy rights reserved to Saudi Business Machine <a href="http://www.sbm.com.sa">SBM</a>
-          </div>
-        </footer>
-				<!-- sbm base container closed -->
+
 			</section>
 
 			<!-- main content closed -->
