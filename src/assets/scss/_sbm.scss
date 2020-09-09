@@ -60,14 +60,13 @@ select:focus{
 }
 .card-header, .card-title {
   //text-transform: uppercase;
-  color: rgba(13,27,62,0.7);
   font-weight: bold;
-  font-size: .88rem;
+  font-size: 1.5rem;
 }
 .card-header {
   padding: .75rem 1.25rem;
   margin-bottom: 0;
-  color: inherit;
+  color: #1a298c;
   background-color: #fff;
   border-bottom: 2px solid #dce2e8;
 }
@@ -93,6 +92,18 @@ select:focus{
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.fa-small{
+  font-size: 0.8rem !important;
+}
+
+.fa-1-5x{
+  font-size: 1.5rem !important;
+}
+
+.fa-1x{
+  font-size: 1rem !important;
 }
 
 .fa-6x{

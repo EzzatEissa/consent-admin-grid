@@ -19,7 +19,7 @@ $black:    #000 !default;
 $nama-gray: #f2f2f2 !default;
 $sbm-green: #94E7DA !default;
 $sbm-dark-blue: #0D1232 !default;
-$sbm-move: #2E2940 !default;
+$sbm-move: #2e3b8a !default;
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -73,7 +73,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $sbm-blue-dark !default;
+$primary:       $sbm-move !default;
 $secondary:     $sbm-green !default;
 $success:       $sbm-blue-light !default;
 $info:          $yellow !default;

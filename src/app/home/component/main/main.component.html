@@ -4,20 +4,75 @@
       <div class="card-header-tab card-header">
         <div class="card-header-title font-size-lg text-capitalize font-weight-bold">
           <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
-          Consent Management
+          Dashboard
+        </div>
+        <div>
+
+        </div>
+        <div class="btn-actions-pane-right text-capitalize">
+          <!--<button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">View All</button>-->
+          <div class="row cursor-pointer">
+            <div class="col">
+              <div class="row">
+                <div class="col text-center mt-3">
+                  <i class="fa fa-sign-out text-danger"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                    <p class="fa-small font-weight-light mb-4">Logout</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!--<p class="fa-0">logout</p>-->
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-6">
+          <div class="row">
+            <div class="col pl-5 pt-4">
+              <div class="font-weight-bold fa-1-5x">Welcome, Mohamed</div>
+              <div class="fa-small">Last Login 2020/09/08 18:05:23</div>
+            </div>
+          </div>
+          <!--<div class="row">-->
+            <!--<div class="col">-->
+              <!---->
+            <!--</div>-->
+          <!--</div>-->
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="row">
+            <div class="col">
+              <app-counts title="Registered Applications" count="3" icon="fa fa-tablet" bgColor="bg-warning"></app-counts>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <app-counts title="Active Consents" count="9,400" icon="fa fa-shield fa fa-3x" bgColor="bg-light"></app-counts>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="no-gutters row">
-        <div class="col-sm-6 col-md-4 col-xl-4">
-          <app-counts title="Active Users" count="300,000" icon="fa fa-users fa fa-2x" bgColor="bg-info"></app-counts>
-        </div>
-        <div class="col-sm-6 col-md-4 col-xl-4">
-          <app-counts title="Registered Applications" count="3" icon="fa fa-tablet" bgColor="bg-primary"></app-counts>
-        </div>
-        <div class="col-sm-12 col-md-4 col-xl-4">
-          <app-counts title="Active Consents" count="9,400" icon="fa fa-shield fa fa-3x" bgColor="bg-light"></app-counts>
-        </div>
-      </div>
+      <!--<div class="no-gutters row">-->
+        <!--<div class="col-sm-6 col-md-4 col-xl-4">-->
+          <!--<app-counts title="Active Users" count="300,000" icon="fa fa-users fa fa-2x" bgColor="bg-info"></app-counts>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6 col-md-4 col-xl-4">-->
+
+        <!--</div>-->
+        <!--<div class="col-sm-12 col-md-4 col-xl-4">-->
+
+        <!--</div>-->
+      <!--</div>-->
     </div>
   </div>
 </div>
@@ -32,7 +87,7 @@
                        icon="fa fa-users fa-8x pb-3 text-blue"
                        link="/consent/user"></app-card-view>
       </div>
-      <div class="col card-view-hover">
+      <div class="col card-view-hover m-2">
         <app-card-view title="Applications"
                        icon="fa fa-tablet fa-8x pt-3 text-green"
                        link="/consent/app"></app-card-view>

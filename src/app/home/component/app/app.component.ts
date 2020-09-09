@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
   appPerDisplay: boolean = false;
   selectedApp: App;
   first: number = 0;
+  model = {} as App;
+  showSearch: boolean = true;
   constructor(private consentService: ConsentService,
               private appService: AppService,
               private route: ActivatedRoute) {
@@ -30,13 +32,14 @@ export class AppComponent implements OnInit {
     this.selectedUserId = +this.route.snapshot.queryParams['userId'];
 
     if(this.selectedUserId > 0) {
+      this.showSearch = false;
       this.consentService.getConsentAppsByUserId(this.selectedUserId).subscribe(res =>{
         this.apps = res;
       })
     } else {
-      this.appService.getAllApps().subscribe(res =>{
-        this.apps = res;
-      })
+      // this.appService.getAllApps().subscribe(res =>{
+      //   this.apps = res;
+      // })
     }
   }
 
@@ -49,5 +52,11 @@ export class AppComponent implements OnInit {
     this.first = $event.first;
 
     console.log($event);
+  }
+
+  onSubmit() {
+    this.appService.getAllApps().subscribe(res =>{
+      this.apps = res;
+    })
   }
 }

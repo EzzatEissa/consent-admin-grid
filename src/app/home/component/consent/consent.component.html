@@ -1,93 +1,106 @@
-
-
 <div class="row">
   <div class="col">
-    <app-card cardTitle = "User Details">
-      <div class="row">
+    <div class="row">
+      <div class="col">
+        <app-card cardTitle="User Details">
+          <div class="row">
 
-        <div class="col">
-          <app-text-viewer label="User Id" [value]="currenUser?.userName"></app-text-viewer>
-        </div>
+            <div class="col">
+              <app-text-viewer label="User Id" [value]="currenUser?.userName"></app-text-viewer>
+            </div>
 
-        <div class="col">
-          <app-text-viewer label="User" [value]="currenUser?.firstName + ' ' +currenUser?.lastName"></app-text-viewer>
-        </div>
-      </div>
-    </app-card>
-
-    <app-card cardTitle = "User Consents">
-
-      <!--<div class="row mt-5">-->
-      <!--<div class="col">-->
-
-      <!--<p-table [value]="consents" [responsive]="true" [rowHover]="true" class="sbm-dt" [paginator]="consents?.length > 5" [rows]="5">-->
-      <!--<ng-template pTemplate="header">-->
-      <!--<tr>-->
-      <!--<th class = "text-center">{{'Account Number' | translate}}</th>-->
-      <!--<th class = "text-center">{{'Segment' | translate}}</th>-->
-      <!--<th class = "text-center">{{'App Id' | translate}}</th>-->
-      <!--<th class = "text-center">{{'Expiration Date' | translate}}</th>-->
-      <!--<th class = "text-center">{{'Status' | translate}}</th>-->
-      <!--<th class = "text-center">{{'Details' | translate}}</th>-->
-      <!--</tr>-->
-      <!--</ng-template>-->
-      <!--<ng-template let-i="rowIndex" pTemplate="body" let-consent>-->
-      <!--<tr class="ui-selectable-row">-->
-      <!--<td class = "text-center">{{consent.account.accountNumber}}</td>-->
-      <!--<td class = "text-center">{{consent.account.user.segment.name}}</td>-->
-      <!--<td class = "text-center">-->
-      <!--<a (click) = "viewApp(consent)">{{consent.app.clientId}}</a>-->
-      <!--</td>-->
-      <!--<td class = "text-center">{{consent.expirationDateTime | date:('medium')}}</td>-->
-      <!--<td class = "text-center">-->
-      <!--<span class = "badge badge-bill" [ngClass] = "{'badge-primary' : consent.status === 'VALID','badge-danger' : consent.status !== 'VALID'}">-->
-      <!--{{consent.status}}-->
-      <!--</span>-->
-      <!--</td>-->
-      <!--<td class = "text-center">-->
-      <!--<a href="javascript:void(0);" (click)="viewConsent(consent)">-->
-      <!--<i class="fa fa-shield fa-2x text-green"></i>-->
-      <!--</a>-->
-      <!--</td>-->
-      <!--</tr>-->
-      <!--</ng-template>-->
-      <!--<ng-template pTemplate="emptymessage">-->
-      <!--<tr>-->
-      <!--<td colspan="8" class="text-center">-->
-      <!--no data-->
-      <!--</td>-->
-      <!--</tr>-->
-      <!--</ng-template>-->
-      <!--</p-table>-->
-
-      <!--</div>-->
-      <!--</div>-->
-
-      <div class="row mb-5" *ngIf="consents && consents.length > 0;else noConsentFound">
-        <ng-container *ngFor="let consent of consents">
-          <div [ngClass]="{ 'col-5': consents.length == 1, 'col': consents.length > 1}">
-            <div class="card border text-center">
-              <div class="card-body">
-                <p class="font-2x">Account Number</p>
-                <p class="font-4x" pTooltip="Account Number">{{consent.account.accountNumber}}</p>
-                <hr class="border-primary">
-                <div class="card-feature mb-4">
-                  <ul class="list-unstyled text-left">
-                    <li><span class="mr-2"><i class="fa fa-id-card text-green" pTooltip="App Id"></i></span>{{consent.app.clientId}}</li>
-                    <li><span class="mr-2"><i class="fa fa-tags text-green" pTooltip="Segment Name"></i></span> {{consent.account.user.segment.name}}</li>
-                    <li><span class="mr-2"><i class="fa fa-calendar text-green" pTooltip="Expiration Date Time"></i></span> {{consent.expirationDateTime | date:('medium')}}</li>
-                    <li><span class="mr-2"><i class="fa fa-exclamation-circle text-green" pTooltip="Status"></i></span> {{consent.status}}</li>
-                  </ul>
-                </div>
-                <a class="btn btn-secondary btn-lg" href="javascript:void(0)" (click)="viewConsent(consent)"><i class="la la-cart-plus mr-2 la-lg"></i>Details</a>
-              </div>
+            <div class="col">
+              <app-text-viewer label="User"
+                               [value]="currenUser?.firstName + ' ' +currenUser?.lastName"></app-text-viewer>
             </div>
           </div>
-        </ng-container>
+        </app-card>
       </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col">
+        <app-card cardTitle="User Consents">
+
+          <!--<div class="row mt-5">-->
+          <!--<div class="col">-->
+
+          <!--<p-table [value]="consents" [responsive]="true" [rowHover]="true" class="sbm-dt" [paginator]="consents?.length > 5" [rows]="5">-->
+          <!--<ng-template pTemplate="header">-->
+          <!--<tr>-->
+          <!--<th class = "text-center">{{'Account Number' | translate}}</th>-->
+          <!--<th class = "text-center">{{'Segment' | translate}}</th>-->
+          <!--<th class = "text-center">{{'App Id' | translate}}</th>-->
+          <!--<th class = "text-center">{{'Expiration Date' | translate}}</th>-->
+          <!--<th class = "text-center">{{'Status' | translate}}</th>-->
+          <!--<th class = "text-center">{{'Details' | translate}}</th>-->
+          <!--</tr>-->
+          <!--</ng-template>-->
+          <!--<ng-template let-i="rowIndex" pTemplate="body" let-consent>-->
+          <!--<tr class="ui-selectable-row">-->
+          <!--<td class = "text-center">{{consent.account.accountNumber}}</td>-->
+          <!--<td class = "text-center">{{consent.account.user.segment.name}}</td>-->
+          <!--<td class = "text-center">-->
+          <!--<a (click) = "viewApp(consent)">{{consent.app.clientId}}</a>-->
+          <!--</td>-->
+          <!--<td class = "text-center">{{consent.expirationDateTime | date:('medium')}}</td>-->
+          <!--<td class = "text-center">-->
+          <!--<span class = "badge badge-bill" [ngClass] = "{'badge-primary' : consent.status === 'VALID','badge-danger' : consent.status !== 'VALID'}">-->
+          <!--{{consent.status}}-->
+          <!--</span>-->
+          <!--</td>-->
+          <!--<td class = "text-center">-->
+          <!--<a href="javascript:void(0);" (click)="viewConsent(consent)">-->
+          <!--<i class="fa fa-shield fa-2x text-green"></i>-->
+          <!--</a>-->
+          <!--</td>-->
+          <!--</tr>-->
+          <!--</ng-template>-->
+          <!--<ng-template pTemplate="emptymessage">-->
+          <!--<tr>-->
+          <!--<td colspan="8" class="text-center">-->
+          <!--no data-->
+          <!--</td>-->
+          <!--</tr>-->
+          <!--</ng-template>-->
+          <!--</p-table>-->
+
+          <!--</div>-->
+          <!--</div>-->
+
+          <div class="row mb-5" *ngIf="consents && consents.length > 0;else noConsentFound">
+            <ng-container *ngFor="let consent of consents">
+              <div class="m-2" [ngClass]="{ 'col-5': consents.length == 1, 'col': consents.length > 1}">
+                <div class="card border text-center">
+                  <div class="card-body">
+                    <p class="font-2x">Account Number</p>
+                    <p class="font-4x" pTooltip="Account Number">{{consent.account.accountNumber}}</p>
+                    <hr class="border-primary">
+                    <div class="card-feature mb-4">
+                      <ul class="list-unstyled text-left">
+                        <li><span class="mr-2"><i class="fa fa-tablet text-primary" pTooltip="App Name"></i></span>{{consent.app.appName}}
+                        </li>
+                        <li><span class="mr-2"><i class="fa fa-calendar text-primary" pTooltip="Expiration Date Time"></i></span>
+                          {{consent.expirationDateTime | date:('medium')}}
+                        </li>
+                        <li><span class="mr-2"><i class="fa fa-exclamation-circle text-primary"
+                                                  pTooltip="Status"></i></span> {{consent.status}}
+                        </li>
+                      </ul>
+                    </div>
+                    <a class="btn btn-primary btn-lg" href="javascript:void(0)" (click)="viewConsent(consent)"><i
+                      class="la la-cart-plus mr-2 la-lg"></i>Details</a>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
 
 
-    </app-card>
+        </app-card>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -100,9 +113,8 @@
 </ng-template>
 
 
-
-
-<p-dialog header="Consent Details" [(visible)]="consentDisplay" position = "center" [modal] = "true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+<p-dialog header="Consent Details" [(visible)]="consentDisplay" position="center" [modal]="true"
+          [style]="{width: '50vw'}" [baseZIndex]="10000">
 
   <div class="row">
     <div class="col">
@@ -120,15 +132,18 @@
 
   <div class="row">
     <div class="col">
-      <app-text-viewer label="Expiration Date" [value]="selectedConsent.expirationDateTime | date:'medium'"></app-text-viewer>
+      <app-text-viewer label="Expiration Date"
+                       [value]="selectedConsent.expirationDateTime | date:'medium'"></app-text-viewer>
     </div>
 
     <div class="col">
-      <app-text-viewer label="Transaction From Date" [value]="selectedConsent.transactionFromDateTime| date:'medium'"></app-text-viewer>
+      <app-text-viewer label="Transaction From Date"
+                       [value]="selectedConsent.transactionFromDateTime| date:'medium'"></app-text-viewer>
     </div>
 
     <div class="col">
-      <app-text-viewer label="Transaction To Date" [value]="selectedConsent.transactionToDateTime | date:'medium'"></app-text-viewer>
+      <app-text-viewer label="Transaction To Date"
+                       [value]="selectedConsent.transactionToDateTime | date:'medium'"></app-text-viewer>
     </div>
   </div>
 
@@ -141,7 +156,8 @@
 </p-dialog>
 
 
-<p-dialog header="Application Details" [(visible)]="tpDisplay" position = "center" [modal] = "true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+<p-dialog header="Application Details" [(visible)]="tpDisplay" position="center" [modal]="true"
+          [style]="{width: '50vw'}" [baseZIndex]="10000">
 
   <div class="row">
     <div class="col">
@@ -153,7 +169,8 @@
     </div>
 
     <div class="col">
-      <app-text-viewer label="Registered Redirect Uri" [value]="selectedConsent.app?.registeredRedirectUri"></app-text-viewer>
+      <app-text-viewer label="Registered Redirect Uri"
+                       [value]="selectedConsent.app?.registeredRedirectUri"></app-text-viewer>
     </div>
   </div>
 
