@@ -26,13 +26,15 @@ import { CardViewComponent } from './component/card-view/card-view.component';
 import {RouterModule} from "@angular/router";
 
 import { PaginatorModule} from 'primeng/paginator';
+import { CountsComponent } from './component/counts/counts.component';
 
 @NgModule({
   declarations: [
     TextViewerComponent,
     ValuesListViewComponent,
     CardComponent,
-    CardViewComponent
+    CardViewComponent,
+    CountsComponent
   ],
   imports: [
     CommonModule,
@@ -79,7 +81,8 @@ import { PaginatorModule} from 'primeng/paginator';
     TooltipModule,
     CardViewComponent,
     RouterModule,
-    PaginatorModule
+    PaginatorModule,
+    CountsComponent
   ],
   entryComponents: [],
   providers: [

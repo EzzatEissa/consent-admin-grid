@@ -1,17 +1,48 @@
-<div class="row vh-80 align-items-center">
-  <div class="col card-view-hover">
-    <app-card-view title="Users"
-                   icon="fa fa-users fa-8x pb-3 text-blue"
-                   link="/consent/user"></app-card-view>
+<div class="row mb-5">
+  <div class="col">
+    <div class="card">
+      <div class="card-header-tab card-header">
+        <div class="card-header-title font-size-lg text-capitalize font-weight-bold">
+          <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
+          Consent Management
+        </div>
+      </div>
+      <div class="no-gutters row">
+        <div class="col-sm-6 col-md-4 col-xl-4">
+          <app-counts title="Active Users" count="300,000" icon="fa fa-users fa fa-2x" bgColor="bg-info"></app-counts>
+        </div>
+        <div class="col-sm-6 col-md-4 col-xl-4">
+          <app-counts title="Registered Applications" count="3" icon="fa fa-tablet" bgColor="bg-primary"></app-counts>
+        </div>
+        <div class="col-sm-12 col-md-4 col-xl-4">
+          <app-counts title="Active Consents" count="9,400" icon="fa fa-shield fa fa-3x" bgColor="bg-light"></app-counts>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col card-view-hover">
-    <app-card-view title="Applications"
-                   icon="fa fa-tablet fa-8x pt-3 text-green"
-                   link="/consent/app"></app-card-view>
+</div>
+
+
+<div class="row">
+  <div class="col">
+
+    <div class="row">
+      <div class="col card-view-hover">
+        <app-card-view title="Users"
+                       icon="fa fa-users fa-8x pb-3 text-blue"
+                       link="/consent/user"></app-card-view>
+      </div>
+      <div class="col card-view-hover">
+        <app-card-view title="Applications"
+                       icon="fa fa-tablet fa-8x pt-3 text-green"
+                       link="/consent/app"></app-card-view>
+      </div>
+      <div class="col card-view-hover">
+        <app-card-view title="Permissions"
+                       icon="fa fa-shield fa-8x pt-3 text-red"
+                       link="/consent/permission"></app-card-view>
+      </div>
+    </div>
   </div>
-  <div class="col card-view-hover">
-    <app-card-view title="Permissions"
-                   icon="fa fa-shield fa-8x pt-3 text-red"
-                   link="/consent/permission"></app-card-view>
-  </div>
+
 </div>
