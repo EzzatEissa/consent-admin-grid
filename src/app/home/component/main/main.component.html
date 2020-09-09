@@ -11,23 +11,23 @@
         </div>
         <div class="btn-actions-pane-right text-capitalize">
           <!--<button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">View All</button>-->
-          <div class="row cursor-pointer">
+          <div class="row cursor-pointer" (click)="logOut()">
             <div class="col">
               <div class="row">
-                <div class="col text-center mt-3">
-                  <i class="fa fa-sign-out text-danger"></i>
+                <div class="col text-center">
+                  <i class="fa fa-sign-out text-danger" style="position: relative;
+    top: 10px;"></i>
+                  <div class="fa-small font-weight-light mb-3">Logout</div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col">
-                    <p class="fa-small font-weight-light mb-4">Logout</p>
-                </div>
-              </div>
+              <!--<div class="row">-->
+                <!--<div class="col">-->
+                    <!--<p class="fa-small font-weight-light">Logout</p>-->
+                <!--</div>-->
+              <!--</div>-->
 
             </div>
           </div>
-
-
           <!--<p class="fa-0">logout</p>-->
         </div>
 
