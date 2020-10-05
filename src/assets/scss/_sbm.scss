@@ -1,3 +1,25 @@
+.fa-2{
+  font-size: 2em !important;
+}
+
+.fa-dark{
+  color: #1c2735;
+}
+
+
+.footer ul li a {
+  color: #7c8389;
+  transition: all 0.2s;
+}
+
+.footer ul li a:hover {
+  color: #fff;
+}
+
+.footer h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  color:#fff;
+}
+
 input:focus, textarea:focus{
   border-top: 1px solid #DEE4E8 !important;
   border-right: 1px solid #DEE4E8 !important;
@@ -66,7 +88,7 @@ select:focus{
 .card-header {
   padding: .75rem 1.25rem;
   margin-bottom: 0;
-  color: #1a298c;
+  color: #1c8ee3  ;
   background-color: #fff;
   border-bottom: 2px solid #dce2e8;
 }

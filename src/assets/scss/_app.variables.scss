@@ -65,9 +65,9 @@ $dropdown-margin-top:               5px;
 $dropdown-heading-bg:               $gray-500;
 
 //-----Dark theme---//
-$dark-bg:                           #424242;
+$dark-bg:                           #202b64;
 $dark-bg-color:                     #fff;
-$dark-bg-container:                 #303030;
+$dark-bg-container:                 #0e3172;
 $dark-border-color:                 rgba($gray-500, 0.1);
 
 //--- Form input variables ---//
@@ -87,9 +87,9 @@ $header-box-shadow:                 0 0 35px 0 rgba(154,161,171,.15);
 $ham-line-height:							2px;
 $ham-icon-height-width:					45px;
 $ham-icon-border-radius:				100%;
-$ham-icon-line-color: 					#818698;
-$ham-icon-border:							1px solid #DEE4E8;
-$ham-icon-background-color:			#F5F9FB;
+$ham-icon-line-color: 					#fff;
+$ham-icon-border:							0px solid #DEE4E8;
+$ham-icon-background-color:			transparent;
 
 //-- Header Menu --//
 $header-main-menu-color:				#fff;

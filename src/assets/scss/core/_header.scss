@@ -2,7 +2,6 @@
 .main-header {
 	align-items: center;
 	background-color: $header-bg;
-	border-bottom: $header-bottom-border;
 	box-shadow: $header-box-shadow;
 	height: $header-height;
 	display: flex;
@@ -117,7 +116,6 @@
 				color: $header-main-menu-color;
 			}
 			&:last-child {
-				border-left: 1px solid $input-border-color;
 				padding-right: 0;
 			}
 		}
@@ -538,7 +536,7 @@
 		padding-top: 3rem;
 	}
 	.sidebar-logo {
-		background: #2E2940;
+		background: #1c2735;
 	}
 }
 .horizontal-main-menu {

@@ -91,8 +91,8 @@
 									data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 									<li tourAnchor="tour-full-screen" class="d-none d-md-block fullscreen-toggle" (click)="toggleFullscreen()">
 										<a href="javascript:void(0)" class="zoom-out">
-											<i class="material-icons" *ngIf="!isFullscreen">tv</i>
-											<i class="material-icons" *ngIf="isFullscreen">fullscreen_exit</i>
+											<i class="material-icons icon-maximize" *ngIf="!isFullscreen"></i>
+											<i class="material-icons icon-minimize" *ngIf="isFullscreen"></i>
 										</a>
 									</li>
 									<!--<li class="d-none d-md-block dropdown">-->
@@ -179,17 +179,16 @@
 										<div class="dropdown-menu rounded-0 dropdown-menu-right p-0" aria-labelledby="navbarDropdownMenuLin">
 											<a class="dropdown-item  d-flex pt-3" routerLink="/user-pages/user-profile">
 												<div class="icon-area  align-self-start">
-													<i class="fa fa-user"></i>
+													<i class="icon-user"></i>
 												</div>
-												<div class="icon-msg mx-2"> <span class="align-self-start d-block ">{{'My Profile'|translate}}</span>
+												<div class="mx-2"> <span class="align-self-start d-block ">{{'My Profile'|translate}}</span>
 												</div>
 											</a>
 											<a class="dropdown-item  d-flex pb-2" (click)="logOut()">
-												<div class="icon-area align-self-start">
-													<i class="fa fa-power-off"></i>
+												<div class="icon-area  align-self-start">
+													<i class=" icon-logout"></i>
 												</div>
-												<div class="icon-msg mx-2"><span class="align-self-start d-block ">{{'Logout'|translate}}</span>
-												</div>
+												<div class="mx-2"> <span class="align-self-start d-block ">{{'Logout'|translate}}</span></div>
 											</a>
 										</div>
 									</li>
@@ -233,7 +232,7 @@
 
             <!--</footer>-->
 					</div>
-          <footer class="">
+          <footer class="footer">
             <div class="row">
               <div class="col-sm-12 col-lg-2 col-md-2">
                 <a href="/" title="">

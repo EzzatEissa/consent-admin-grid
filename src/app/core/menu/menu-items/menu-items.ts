@@ -27,19 +27,19 @@ const MENUITEMS = [
     state: 'consent/user',
     name: 'Users',
     type: 'link',
-    icon: 'fa fa-user',
+    icon: 'icon-users',
   },
   {
     state: 'consent/app',
     name: 'Applications',
     type: 'link',
-    icon: 'fa fa-tablet',
+    icon: 'icon-smartphone',
   },
   {
     state: 'consent/permission',
     name: 'Permissions',
     type: 'link',
-    icon: 'fa fa-shield',
+    icon: 'icon-unlock',
   }
   // ,
   // {

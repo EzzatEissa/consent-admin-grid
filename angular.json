@@ -56,7 +56,7 @@
               "node_modules/popper.js/dist/umd/popper.js",
               "src/assets/js/bootstrap.js",
               "node_modules/hammerjs/hammer.js",
-              "node_modules/sortablejs/Sortable.js",
+              "node_modules/sortablejs/dist/sortable.umd.js",
               "node_modules/easy-pie-chart/dist/easypiechart.js",
               "node_modules/ace-builds/src-min/ace.js",
               "node_modules/ace-builds/src-min/theme-eclipse.js",
