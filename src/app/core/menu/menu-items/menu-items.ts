@@ -41,18 +41,20 @@ const MENUITEMS = [
     type: 'link',
     icon: 'icon-unlock',
   }
-  // ,
-  // {
-  //    state: 'dashboard',
-  //    name: 'DASHBOARD',
-  //    type: 'sub',
-  //    icon: 'icon-speedometer icons',
-  //    label: 'New',
-  //    children: [
-  //       { state: 'dashboard-v1', name: 'DASHBOARD 1' },
-  //       { state: 'dashboard-v2', name: 'DASHBOARD 2' },
-  //    ]
-  // }
+  ,
+  {
+    state: 'ob-sandbox',
+    name: 'Ob-sandbox',
+    type: 'sub',
+    icon: 'icon-credit-card2',
+    // label: 'New',
+    children: [
+      {state: 'view-users', name: 'View User'},
+      {state: 'add-accounts', name: 'Add Accounts'},
+      {state: 'add-transactions', name: 'Add Transactions'},
+      {state: 'add-balances', name: 'Add Balance'}
+    ]
+  }
 
 ];
 

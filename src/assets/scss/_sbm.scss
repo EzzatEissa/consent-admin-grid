@@ -170,3 +170,51 @@ body,html {
 .text-gray-600{
   color: $gray-600;
 }
+
+
+
+table > thead  > tr > th{
+  padding: 0.571em 0.857em !important;
+  border: 1px solid #c8c8c8 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  background-color: #2e538a !important;
+}
+
+table > thead > tr > th {
+  color: $white !important;;
+  background-color: #2e538a !important ;
+}
+
+table {
+  border-collapse: collapse;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+table .ui-table-tbody > tr {
+  background-color: #ffffff;
+  color: #333333;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+body .ui-table .ui-table-tbody > tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+body .ui-table .ui-table-tbody > tr > td {
+  background-color: inherit;
+  border: 1px solid #e5eae6 !important;
+  transition: box-shadow 0.2s;
+}
+body .ui-table .ui-table-tbody > tr > td {
+  padding: 1em 0.857em !important;
+}
+.ui-table .ui-table-thead > tr > th, .ui-table .ui-table-tbody > tr > td, .ui-table .ui-table-tfoot > tr > td {
+  padding: .25em .5em;
+}
+
+.sbm-dt.ui-table .ui-table-tbody > tr:hover {
+  cursor: unset !important;
+}

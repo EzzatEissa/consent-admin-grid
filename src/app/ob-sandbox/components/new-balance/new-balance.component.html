@@ -1,0 +1,162 @@
+<!--<app-card cardTitle="Transaction Details" *ngIf="!showMsg">-->
+
+<div class="row">
+  <div class="col">
+    <div class="row" *ngIf="showMsg">
+
+      <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
+        Balance added Successfully, <a href="/ob-sandbox/view-users" class="alert-link">View Users with Accounts</a>.
+      </div>
+
+    </div>
+    <div *ngIf="showErrorMsg" class="alert alert-danger" role="alert">
+      Balance saving Failed , Error: {{errorMesage}}.
+    </div>
+  </div>
+</div>
+
+
+<div class="row" *ngIf="!showMsg">
+  <div class="col">
+    <app-card cardTitle="Transaction Details">
+      <div class="row">
+        <div class="col">
+          <form style="width: 80%">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputaccountType">User</label>
+                <select id="inputaccountType" name="usersdropDown" class="form-control"
+                        (change)="onUserListChange($event)" [(ngModel)]="userId">
+                  <option *ngFor="let user of usersList" [value]="user.id">{{ user.userName }}</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputaccountType">Account</label>
+                <select id="inputaccountType" name="usersdropDown" class="form-control"
+                        [(ngModel)]="balance.AccountId">
+                  <option *ngFor="let account of accountList" [value]="account.AccountId">{{ account.AccountId }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-row">
+              <div class="form-group" style="width: 70%">
+                <label for="inputStatus">Balance</label>
+                <table class="sbm-dt ui-table ui-widget ui-table-responsive ui-table-hoverable-rows" name="tabbankCode">
+                  <thead class="ui-table-thead">
+                  <tr>
+                    <th>Credit/Debit Indicator</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Currency</th>
+                  </tr>
+                  </thead>
+                  <tbody class="ui-table-tbody">
+                  <tr>
+                    <td>
+                      <select id="balanceaccountType" name="balanceaccountTypedropDown" class="form-control"
+                              [(ngModel)]="balance.CreditDebitIndicator">
+                        <option *ngFor="let lookup of creditDebitList" [value]="lookup.code">{{ lookup.code }}</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select id="balanceType" name="balanceTypedropDown" class="form-control"
+                              [(ngModel)]="balance.BalanceType">
+                        <option *ngFor="let lookup of balanceTypeList" [value]="lookup.code">{{ lookup.code }}</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input type="number" min="0" class="form-control" id="balanceAmt" [(ngModel)]="balanceAmount.Amount"
+                             name="balanceAmtName" />
+                    </td>
+                    <td>
+                      <select id="balanceAmtCurrency" name="balanceAmtCurrencyName" class="form-control"
+                              [(ngModel)]="balanceAmount.Currency">
+                        <option *ngFor="let lookup of currencyList" [value]="lookup.code">{{ lookup.code }}
+                        </option>
+                      </select>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </form>
+          <button class="btn btn-primary" (click)="saveBalance()"> Save Balance</button>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>
+<!--<div class="container" *ngIf="!showMsg">-->
+<!--    <form style="width: 80%">-->
+<!--        <p class="h4 mb-4">Transaction Details</p>-->
+<!--        <div class="form-row">-->
+<!--            <div class="form-group col-md-4">-->
+<!--                <label for="inputaccountType">User</label>-->
+<!--                <select id="inputaccountType" name="usersdropDown" class="form-control"-->
+<!--                    (change)="onUserListChange($event)" [(ngModel)]="userId">-->
+<!--                    <option *ngFor="let user of usersList" [value]="user.id">{{ user.userName }}</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div class="form-group col-md-4">-->
+<!--                <label for="inputaccountType">Account</label>-->
+<!--                <select id="inputaccountType" name="usersdropDown" class="form-control"-->
+<!--                    [(ngModel)]="balance.AccountId">-->
+<!--                    <option *ngFor="let account of accountList" [value]="account.AccountId">{{ account.AccountId }}-->
+<!--                    </option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        <div class="form-row">-->
+<!--            <div class="form-group" style="width: 70%">-->
+<!--                <label for="inputStatus">Balance</label>-->
+<!--                <table class="sbm-dt ui-table ui-widget ui-table-responsive ui-table-hoverable-rows" name="tabbankCode">-->
+<!--                    <thead class="ui-table-thead">-->
+<!--                        <tr>-->
+<!--                            <th>Credit/Debit Indicator</th>-->
+<!--                            <th>Type</th>-->
+<!--                            <th>Amount</th>-->
+<!--                            <th>Currency</th>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody class="ui-table-tbody">-->
+<!--                        <tr>-->
+<!--                            <td>-->
+<!--                                <select id="balanceaccountType" name="balanceaccountTypedropDown" class="form-control"-->
+<!--                                    [(ngModel)]="balance.CreditDebitIndicator">-->
+<!--                                    <option *ngFor="let lookup of creditDebitList" [value]="lookup.code">{{ lookup.code }}</option>-->
+<!--                                </select>-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                <select id="balanceType" name="balanceTypedropDown" class="form-control"-->
+<!--                                    [(ngModel)]="balance.BalanceType">-->
+<!--                                    <option *ngFor="let lookup of balanceTypeList" [value]="lookup.code">{{ lookup.code }}</option>-->
+<!--                                </select>-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                <input type="number" min="0" class="form-control" id="balanceAmt" [(ngModel)]="balanceAmount.Amount"-->
+<!--                                    name="balanceAmtName" />-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                                <select id="balanceAmtCurrency" name="balanceAmtCurrencyName" class="form-control"-->
+<!--                                [(ngModel)]="balanceAmount.Currency">-->
+<!--                                <option *ngFor="let lookup of currencyList" [value]="lookup.code">{{ lookup.code }}-->
+<!--                                </option>-->
+<!--                            </select>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </form>-->
+<!--    <button class="btn btn-primary" (click)="saveBalance()"> Save Balance</button>-->
+
+<!--</div>-->

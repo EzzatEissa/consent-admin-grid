@@ -1,0 +1,123 @@
+<div class="card m-3">
+  <h5 class="card-header">Users list</h5>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <table class="sbm-dt ui-table ui-widget ui-table-responsive ui-table-hoverable-rows">
+          <thead class="ui-table-thead">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody class="ui-table-tbody">
+          <tr *ngFor="let user of users; let i = index" class="ui-selectable-row">
+            <td>
+              {{user.id}}
+            </td>
+            <td>
+              {{user.userName}}
+            </td>
+            <td>
+              <div class="row text-center">
+                <div class="col-auto">
+                  <button class="btn btn-info" (click)="showAccounts(user.id);hideAddUser()">View Accounts</button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-danger" (click)="DeleteUser(user.id, i)">Delete</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" (click)="showAddUser()">Add User</button>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="showAddUserFlag">
+      <div class="col">
+        <div class="card m-3">
+          <h5 class="card-header">Add User</h5>
+          <div class="card-body">
+            <div class="form-row">
+              <div class=" col-md-4">
+                <!-- <label for="inputState">User Name</label> -->
+                <input type="text" class="form-control" name="defaultuserName" [(ngModel)]="newUser.userName"
+                       placeholder="User Name">
+              </div>
+              <button class="btn btn-primary" (click)="addUser()">Add </button>
+              <div class="col-xs-12"></div>
+              <button class="btn btn-secondary" (click)="hideAddUser()">cancel </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card m-3" *ngIf="showAccountsFlag">
+  <h5 class="card-header">Account list</h5>
+  <div class="card-body">
+    <table class="sbm-dt ui-table ui-widget ui-table-responsive ui-table-hoverable-rows">
+      <thead class="ui-table-thead">
+      <tr>
+        <th class = "text-center"style="width: 3rem;">Id</th>
+        <th class = "text-center"style="width: 10rem;">Status</th>
+        <th class = "text-center"style="width: 10rem;">Currency</th>
+        <th class = "text-center"style="width: 10rem;">AccountType</th>
+        <th class = "text-center"style="width: 10rem;">AccountSubType</th>
+        <th class = "text-center"style="width: 10rem;">Nick Name</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody class="ui-table-tbody">
+      <tr *ngFor="let account of accounts" class="ui-selectable-row">
+        <td>
+          {{account.AccountId}}
+        </td>
+        <td>
+          {{account.Status}}
+        </td>
+        <td>
+          {{account.Currency}}
+        </td>
+        <td>
+          {{account.AccountType}}
+        </td>
+        <td>
+          {{account.AccountSubType}}
+        </td>
+        <td>
+          {{account.NickName}}
+        </td>
+        <td>
+          <div class="form-row">
+            <button class="btn btn-info" type="button" name="btnAction2" (click)="showAccountDetails(account)">
+              Account Details</button>
+            <div class="col-xs-12"></div>
+            <button class="btn btn-info" type="button" name="btnAction2" (click)="showTransactionsList(account)">
+              Transactions</button>
+            <div class="col-xs-12"></div>
+            <button class="btn btn-info" type="button" name="btnAction2" (click)="showBalancesList(account)">
+              Balances</button>
+            <div class="col-xs-12"></div>
+            <button class="btn btn-warning" (click)="EditAccount(account, i)">Edit</button>
+            <div class="col-xs-12"></div>
+            <button class="btn btn-danger" (click)="DeleteAccount(account.AccountId, i)">Delete</button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

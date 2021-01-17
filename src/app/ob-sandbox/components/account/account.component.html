@@ -1,0 +1,136 @@
+<div class="card m-3" *ngIf="!showMsg">
+  <h5 class="card-header">Account Details</h5>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <form style="width: 80%">
+          <p class="h4 mb-4">Account Details</p>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputaccountType">User</label>
+              <select id="inputaccountType" name="usersdropDown" [disabled]="!editFlag" class="form-control" [(ngModel)]="account.userId">
+                <option *ngFor="let user of usersList" [value]="user.id">{{ user.userName }}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputState">NickName</label>
+              <input type="text" class="form-control" [readonly]="!editFlag" name="defaultaccountName" [(ngModel)]="account.NickName"
+                     placeholder="NickName">
+
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="inputaccountType">AccountType</label>
+              <select id="inputaccountType" name="accountTypedropDown" [disabled]="!editFlag" class="form-control"
+                      [(ngModel)]="account.AccountType">
+                <option *ngFor="let lookup of accountTypeList" [value]="lookup.code">{{ lookup.code }}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputaccountSubType">AccountSubType</label>
+              <select id="inputaccountSubType" name="accountSubTypeDown" [disabled]="!editFlag" class="form-control"
+                      [(ngModel)]="account.AccountSubType">
+                <option *ngFor="let lookup of accountSubTypeList" [value]="lookup.code">{{lookup.code}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group col-md-4">
+              <label for="inputCur">Currency</label>
+              <select id="inputCur" name="currencydropDown" class="form-control" [disabled]="!editFlag" [(ngModel)]="account.Currency">
+                <option *ngFor="let currency of currencyList" [value]="currency.code">{{ currency.code }}</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="inputStatus">Status</label>
+              <select id="inputStatus" name="statusdropDown" class="form-control" [disabled]="!editFlag" [(ngModel)]="account.Status">
+                <option *ngFor="let lookup of statusList" [value]="lookup.code">{{ lookup.code }}</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <app-card cardTitle="Account Identification">
+              <div class="row">
+                <div class="col">
+                  <table class="sbm-dt ui-table ui-widget ui-table-responsive ui-table-hoverable-rows" name="tablIdentification">
+                    <thead class="ui-table-thead">
+                    <tr>
+                      <th>SchemeName</th>
+                      <th>Identification</th>
+                      <th>Identification Name</th>
+                      <th>SecondaryIdentification</th>
+                    </tr>
+                    </thead>
+                    <tbody class="ui-table-tbody">
+                    <tr *ngFor="let accountIdentificationObj of accountIdentificationList; let i = index" class="ui-selectable-row">
+                      <td>
+                        <select id="inputActIden1" name="{{accountIdentificationObj.SchemeName}}" [disabled]="!editFlag"
+                                class="form-control" [(ngModel)]="accountIdentificationObj.SchemeName">
+                          <option *ngFor="let lookup of schemeNameList" [value]="lookup.code">{{ lookup.code }}
+                          </option>
+                        </select>
+                      </td>
+                      <td>
+                        <input [(ngModel)]="accountIdentificationObj.Identification" [readonly]="!editFlag" class="form-control"
+                               type="text" name="{{accountIdentificationObj.Identification}}" />
+                      </td>
+                      <td>
+                        <input [(ngModel)]="accountIdentificationObj.Name" [readonly]="!editFlag" class="form-control" type="text"
+                               name="{{accountIdentificationObj.Name}}" />
+                      </td>
+                      <td>
+                        <input [(ngModel)]="accountIdentificationObj.SecondaryIdentification" [readonly]="!editFlag" class="form-control"
+                               type="text" name="{{accountIdentificationObj.SecondaryIdentification}}" />
+                      </td>
+
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </app-card>
+          </div>
+
+
+          <div class="form-group" style="width: 60%">
+
+            <app-card cardTitle="Account Servicer">
+              <div class="form-row">
+
+                <div class="form-group col-md-4">
+                  <label for="inputCur">SchemeName</label>
+                  <input class="form-control" type="text" [readonly]="!editFlag" id="newAttributeName"
+                         [(ngModel)]="accountServicer.SchemaName" name="SchemeNameName" value="BIC" />
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="inputStatus">Identification</label>
+                  <input class="form-control" [readonly]="!editFlag" type="text" id="IdentificationName"
+                         [(ngModel)]="accountServicer.Identification" name="IdentificationName3" />
+                </div>
+              </div>
+            </app-card>
+          </div>
+
+
+
+          <!-- Save button -->
+          <!-- <button class="btn btn-primary" (click)="saveAccount()"> save Account</button> -->
+        </form>
+        <div *ngIf="editFlag">
+          <button class="btn btn-primary" (click)="doUpdate()">Update</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

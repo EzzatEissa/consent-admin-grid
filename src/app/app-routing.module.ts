@@ -27,6 +27,16 @@ export const AppRoutes: Routes = [
     }],
   },
   {
+    path: 'ob-sandbox',
+    component: MainComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
+    children: [{
+      path: '', loadChildren: () =>
+        import('./ob-sandbox/ob-sandbox.module').then(m => m.ObSandboxModule)
+    }],
+  },
+  {
     path: '**',
     redirectTo: 'consent'
   }

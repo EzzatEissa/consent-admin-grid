@@ -1,0 +1,61 @@
+<app-card cardTitle="Transactions list">
+  <div class="row">
+    <div class="col">
+      <table class="sbm-dt ui-table ui-widget ui-table-responsive ui-table-hoverable-rows">
+        <thead class="ui-table-thead">
+        <tr>
+          <th>TransactionReference</th>
+          <th>Credit/Debit Indicator</th>
+          <th>Status</th>
+          <th>Mutability</th>
+          <th class = "text-center"style="width: 15rem;">BookingDateTime</th>
+          <th class = "text-center"style="width: 15rem;">TransactionInformation</th>
+          <th>AddressLine</th>
+          <th class = "text-center"style="width: 7rem;">Action</th>
+        </tr>
+        </thead>
+        <tbody class="ui-table-tbody">
+        <tr *ngFor="let trans of transactionsList" class="ui-selectable-row">
+          <td>
+            {{trans.TransactionReference}}
+          </td>
+          <td>
+            {{trans.CreditDebitIndicator}}
+          </td>
+          <td>
+            {{trans.Status}}
+          </td>
+          <td>
+            {{trans.Mutability}}
+          </td>
+          <td>
+            {{trans.BookingDateTime}}
+          </td>
+          <td>
+            {{trans.TransactionInformation}}
+          </td>
+          <td>
+            {{trans.AddressLine}}
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="DeleteTransaction(trans.TransactionId, i)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-success" (click)="addTransaction()"> Add Transaction</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-new-transaction *ngIf="newAccount == 1"></app-new-transaction>
+    </div>
+  </div>
+
+</app-card>
