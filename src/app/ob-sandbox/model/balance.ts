@@ -1,5 +1,6 @@
-import { Amount } from './amount';
-import { CreditLine } from './CreditLine';
+import {Amount} from './amount';
+import {CreditLine} from './creditLine';
+
 
 export class Balance {
     AccountId: string;
