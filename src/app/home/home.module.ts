@@ -12,16 +12,18 @@ import { AppComponent } from './component/app/app.component';
 import {ConsentComponent} from "./component/consent/consent.component";
 import { UserComponent } from './component/user/user.component';
 import { PermissionComponent } from './component/permission/permission.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 
 @NgModule({
   declarations: [MainComponent, ConsentComponent, AppComponent, UserComponent, PermissionComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    FormsModule,
-    TranslateModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        FormsModule,
+        TranslateModule,
+        SharedModule,
+        NgxSpinnerModule
+    ]
 })
 export class HomeModule { }

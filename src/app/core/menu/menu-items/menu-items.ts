@@ -52,7 +52,8 @@ const MENUITEMS = [
       {state: 'view-users', name: 'View User'},
       {state: 'add-accounts', name: 'Add Accounts'},
       {state: 'add-transactions', name: 'Add Transactions'},
-      {state: 'add-balances', name: 'Add Balance'}
+      {state: 'add-balances', name: 'Add Balance'},
+      {state: 'lookup-config', name: 'Lookup Config'}
     ]
   }
 

@@ -1,6 +1,7 @@
 import {Component, OnInit, Optional, ViewEncapsulation} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'sbm-app',

@@ -1,5 +1,6 @@
 {
   "local.api.url": "http://127.0.0.1:8080/api",
   "cluster.api.url": "http://sbm-sandbox-master-management-sandbox-backend-aa.riyadbank-us-east-3-bx2-296b1aa3b5f384c7c2983c589dc3a273-0000.us-east.containers.appdomain.cloud/api",
-  "environment.type": "cluster"
+  "environment.type": "cluster",
+  "lookup.name.list": "account_type,account_sub_type,currency,status,scheme_name,credit_depit,balance_type,address_type,autorization_type,mutability"
   }

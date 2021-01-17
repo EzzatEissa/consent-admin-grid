@@ -2,12 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
-import {environment} from "../../../environments/environment";
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Injectable()
 export class ResponseRequestInterceptor implements HttpInterceptor {
 
-    constructor() {}
+    constructor(private spinnerService: NgxSpinnerService) {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // ----------------------------- append with credentials to request
@@ -15,12 +15,14 @@ export class ResponseRequestInterceptor implements HttpInterceptor {
         //   withCredentials: true
         // });
         // ----------------------------- handle success error and success response
+        this.spinnerService.show();
         return next.handle(request).pipe(
             tap((event: HttpEvent<any>) => {
               if (event instanceof HttpResponse) {
                  // if (event.url.includes('/login')) {
                  //   location.href = `${environment.apiUrl}`;
                  // }
+                this.spinnerService.hide();
               }
             }),
             catchError(err => {
@@ -36,6 +38,7 @@ export class ResponseRequestInterceptor implements HttpInterceptor {
                   return throwError(err);
                 }
                 // const error = err.message || err.statusText;
+              this.spinnerService.hide();
                 return throwError(err);
             }),
           map((event: HttpEvent<any>) => {

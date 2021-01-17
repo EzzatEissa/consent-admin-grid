@@ -7,6 +7,7 @@ import {NewTransactionComponent} from './components/new-transaction/new-transact
 import {TransactionsListComponent} from './components/transactions-list/transactions-list.component';
 import {BalanceListComponent} from './components/balance-list/balance-list.component';
 import {NewBalanceComponent} from './components/new-balance/new-balance.component';
+import {LookupConfigComponent} from './components/lookup-config/lookup-config.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'transctions-list', component: TransactionsListComponent },
   { path: 'balances-list', component: BalanceListComponent },
   { path: 'add-balances', component: NewBalanceComponent },
+  { path: 'lookup-config', component: LookupConfigComponent }
 ];
 
 @NgModule({

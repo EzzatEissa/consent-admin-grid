@@ -1,0 +1,227 @@
+<div class="row">
+  <div class="col">
+    <app-card cardTitle="Lookup list">
+      <div class="row">
+        <div class="col bg-primary mx-2 rounded" *ngFor="let lookupModel of lookupModelList; let i = index">
+          <button (click)="showLookupTable(lookupModel)" type="button" class="btn btn-link text-white"
+                  style="padding: 0px">
+            {{lookupModel.niceName}}</button>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>
+
+<div class="row mt-3" *ngIf="showLookupTableFlag==true">
+  <div class="col">
+    <app-card cardTitle="{{lookupModel.niceName}}">
+      <div class="row" *ngIf="showLookupTableFlag==true">
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <!-- <th>Discription</th> -->
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let lookup of lookupList; let i = index">
+              <td>
+                {{lookup.code}}
+              </td>
+              <td>
+                {{lookup.name}}
+              </td>
+              <!-- <td>
+          <input type="text" class="form-control" id="discription" [(ngModel)]="lookup.discription"
+                  name="discriptionName" />
+      </td> -->
+              <td>
+                <button class="btn btn-danger" (click)="DeleteLookUpRecord(lookup.id, i)">Delete</button>
+              </td>
+
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">
+              {{SucessMessage}}.
+            </div>
+          </div>
+          <div *ngIf="showErrorMsg" class="alert alert-danger" role="alert">
+            {{errorMesage}}.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group " *ngIf="showLookupTableFlag==true">
+            <button (click)="showaddNewTable(lookupModel.lookupName)" type="button" class="btn btn-primary">
+              Add {{lookupModel.niceName}}</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" *ngIf="showAddNewLookupFlag==true">
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <!-- <th>Discription</th> -->
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <input type="text" class="form-control" id="code" [(ngModel)]="newLookup.code"
+                       name="codeName"/>
+              </td>
+              <td>
+                <input type="text" class="form-control" id="name" [(ngModel)]="newLookup.name"
+                       name="nameName"/>
+              </td>
+              <!-- <td>
+          <input type="text" class="form-control" id="discription" [(ngModel)]="lookup.discription"
+                  name="discriptionName" />
+      </td> -->
+
+              <td>
+
+                <div class="form-row">
+                  <button class="btn btn-success" (click)="saveNewLookup()">Add</button>
+                  <div class="col-xs-12"></div>
+
+                  <button class="btn btn-secondary" (click)="showAddNewLookupFlag=false">Cancel</button>
+                </div>
+              </td>
+
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>
+
+<!--<div class="container">-->
+<!--    <h2>Balances list</h2>-->
+<!--    <br>-->
+<!--    <div class="form-row">-->
+<!--        <table>-->
+<!--            <tbody>-->
+<!--                <tr *ngFor="let lookupModel of lookupModelList; let i = index">-->
+<!--                    <td>-->
+<!--                        <button (click)="showLookupTable(lookupModel)" type="button" class="btn btn-link"-->
+<!--                            style="padding: 0px">-->
+<!--                            {{lookupModel.niceName}}</button>-->
+
+
+<!--                    </td>-->
+
+<!--                </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--        <div class="col-md-1"></div>-->
+<!--        <div *ngIf="showLookupTableFlag==true" style="min-width:40%">-->
+<!--            <table class="table table-hover">-->
+<!--                <thead>-->
+<!--                    <tr>-->
+<!--                        <th>Code</th>-->
+<!--                        <th>Name</th>-->
+<!--                        &lt;!&ndash; <th>Discription</th> &ndash;&gt;-->
+<!--                        <th>Action</th>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                    <tr *ngFor="let lookup of lookupList; let i = index">-->
+<!--                        <td>-->
+<!--                            {{lookup.code}}-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            {{lookup.name}}-->
+<!--                        </td>-->
+<!--                        &lt;!&ndash; <td>-->
+<!--                    <input type="text" class="form-control" id="discription" [(ngModel)]="lookup.discription"-->
+<!--                            name="discriptionName" />-->
+<!--                </td> &ndash;&gt;-->
+<!--                        <td>-->
+<!--                            <button class="btn btn-danger" (click)="DeleteLookUpRecord(lookup.id, i)">Delete</button>-->
+<!--                        </td>-->
+
+<!--                    </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br>-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div *ngIf="showSuccessMsg" class="alert alert-success" role="alert">-->
+<!--                {{SucessMessage}}.-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div *ngIf="showErrorMsg" class="alert alert-danger" role="alert">-->
+<!--            {{errorMesage}}.-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br>-->
+<!--    <div class="form-group " *ngIf="showLookupTableFlag==true">-->
+<!--        <button (click)="showaddNewTable(lookupModel.lookupName)" type="button" class="btn btn-primary">-->
+<!--            Add {{lookupModel.niceName}}</button>-->
+<!--    </div>-->
+<!--    <br>-->
+
+<!--    <div class="form-group col-md-9 " *ngIf="showAddNewLookupFlag==true">-->
+<!--        <table class="table table-hover">-->
+<!--            <thead>-->
+<!--                <tr>-->
+<!--                    <th>Code</th>-->
+<!--                    <th>Name</th>-->
+<!--                    &lt;!&ndash; <th>Discription</th> &ndash;&gt;-->
+<!--                    <th>Action</th>-->
+<!--                </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <input type="text" class="form-control" id="code" [(ngModel)]="newLookup.code"-->
+<!--                            name="codeName" />-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <input type="text" class="form-control" id="name" [(ngModel)]="newLookup.name"-->
+<!--                            name="nameName" />-->
+<!--                    </td>-->
+<!--                    &lt;!&ndash; <td>-->
+<!--                <input type="text" class="form-control" id="discription" [(ngModel)]="lookup.discription"-->
+<!--                        name="discriptionName" />-->
+<!--            </td> &ndash;&gt;-->
+
+<!--                    <td>-->
+
+<!--                        <div class="form-row">-->
+<!--                            <button class="btn btn-success" (click)="saveNewLookup()">Add</button>-->
+<!--                            <div class="col-xs-12"></div>-->
+
+<!--                            <button class="btn btn-secondary" (click)="showAddNewLookupFlag=false">Cancel</button>-->
+<!--                        </div>-->
+<!--                    </td>-->
+
+<!--                </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
+
+<!--</div>-->

@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
@@ -29,6 +29,7 @@ import {ResponseRequestInterceptor} from './core/interceptors/response-request.i
 import {AppComponent} from './app.component';
 import {ConfigurationUtil} from './ob-sandbox/utilities/configuration-util';
 import {ApiUrl} from './ob-sandbox/utilities/api-url';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 /********** Custom option for ngx-translate ******/
 export function createTranslateLoader(http: HttpClient) {
@@ -78,7 +79,8 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     ToastrModule.forRoot({timeOut: 2000, preventDuplicates: true}),
     WidgetsComponentModule,
     AngularFireModule.initializeApp(firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgxSpinnerModule
   ],
   declarations: [
     AppComponent,
@@ -96,7 +98,8 @@ const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
     },
     {provide: HTTP_INTERCEPTORS, useClass: ResponseRequestInterceptor, multi: true},
     ConfigurationUtil, ApiUrl
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ChankyaAppModule {
+export class SBMAppModule {
 }

@@ -1,7 +1,7 @@
 <!-- Main-->
 <div id ="app" class="app {{headerSkinColor}} {{themeSkinColor}}" [dir]="layout" [class.app-dark]="dark" [class.boxed]="boxed"
-	[class.collapsed-sidebar]="collapseSidebar" [class.compact-sidebar]="compactSidebar" [class.customizer-in]="customizerIn"
-	[class.chat-window--open]="chatWindowOpen" [class.sidebar-closed]="sidebarClosed" [class.sidebar-opened]="!sidebarClosed" [class.chat-sidebar]="chatSidebar" [ngClass]="{'icon-sidebar-wrap': miniSidebar}">
+     [class.collapsed-sidebar]="collapseSidebar" [class.compact-sidebar]="compactSidebar" [class.customizer-in]="customizerIn"
+     [class.chat-window--open]="chatWindowOpen" [class.sidebar-closed]="sidebarClosed" [class.sidebar-opened]="!sidebarClosed" [class.chat-sidebar]="chatSidebar" [ngClass]="{'icon-sidebar-wrap': miniSidebar}">
 	<ng-sidebar-container>
 		<div ng-sidebar-content>
 			<ng-sidebar #sidenav [(opened)]="_opened" [(mode)]="_mode" [closeOnClickOutside]="closeOnClickOutside()" [(showBackdrop)]="_showBackdrop">
@@ -361,6 +361,17 @@
 		<!--&lt;!&ndash; setting panel Closed &ndash;&gt;-->
 	<!--</div>-->
 	<!-- sbm customize -->
+  <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#007ad9"
+    type="ball-spin"
+
+  >
+    <!--    type="ball-clip-rotate"-->
+    <p style="font-size: 20px; color: white;font-weight: bold;">Loading...</p>
+  </ngx-spinner>
+
 	<div class="chat-sidebar-pan">
 		<div class="settings-panel">
 			<ul class="nav nav-tabs" role="tablist">

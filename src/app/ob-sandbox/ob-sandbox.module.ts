@@ -13,6 +13,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from '../shared/shared.module';
 import {TranslateModule} from '@ngx-translate/core';
+import {LookupConfigComponent} from './components/lookup-config/lookup-config.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {TranslateModule} from '@ngx-translate/core';
     NewBalanceComponent,
     NewAccountComponent,
     BalanceListComponent,
-    AccountComponent
+    AccountComponent,
+    LookupConfigComponent
   ],
   imports: [
     CommonModule,
@@ -34,8 +36,6 @@ import {TranslateModule} from '@ngx-translate/core';
     SharedModule,
     TranslateModule
   ]
-  // ,
-  // providers: [ConfigurationUtil, ApiUrl],
 })
 export class ObSandboxModule {
 }
